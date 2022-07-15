@@ -322,6 +322,7 @@ module.exports = {
                 let settings = global.db.data.settings[this.user.jid]
                 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
                 if (settings) {
+                    if (!'public' in settings) settings.public = false
                     if (!'tag' in settings) settings.tag = true
                     if (!'self' in settings) settings.self = false
                     if (!'anon' in settings) settings.anon = true
@@ -612,6 +613,7 @@ module.exports = {
     },
 
     async participantsUpdate({ id, participants, action }) {
+        if (opts['public']) return
         if (opts['self']) return
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
