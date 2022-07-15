@@ -667,6 +667,7 @@ module.exports = {
         }
     },
     async groupsUpdate(groupsUpdate, fromMe, m) {
+        if (opts['Public'] && m.fromMe) return
         if (opts['self'] && m.fromMe) return
             console.log(m)
         // Ingfo tag orang yg update group
