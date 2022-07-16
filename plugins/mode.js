@@ -8,7 +8,8 @@ let handler = async(m, { conn, usedPrefix, command }) => {
     }
   }
   if (/^Public$/i.test(command)) {
-    if (settings.public == false) conn.sendButton(m.chat, `sudah ${command} dari tadii bos!`, wm, 'Public', usedPrefix + 'Public', m)
+   	var settings = db.data.settings[conn.user.jid]
+    if (settings.public == true) conn.sendButton(m.chat, `sudah ${command} dari tadii bos!`, wm, 'Public', usedPrefix + 'Public', m)
     if (!settings.public == true) {
       await conn.sendButton(m.chat, `Berhasil set ke ${command}!`, wm, 'Self', usedPrefix + 'Self', m)
       settings.public = true
