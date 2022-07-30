@@ -16,7 +16,7 @@ conn.sendFile(m.chat, menu, '', '', m, true)
 
 
 
-handler.customPrefix = /^(hi|.menu|hiii|hi bot|tes|tes|hy|halo|hallo|helo|hello|hy aine|halo aine|hallo aine|helo aine|hello aine)$/i
+handler.customPrefix = /^(hi|menu|hiii|hi bot|tes|tes|hy|halo|hallo|helo|hello|hy aine|halo aine|hallo aine|helo aine|hello aine)$/i
 
 handler.command = new RegExp
 
