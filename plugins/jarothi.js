@@ -4,9 +4,9 @@ const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn }) => {
 
-let hallo = fs.readFileSync('./mp3/WhatsApp-Ptt-2021-07-14-at-18.12.33.opus') 
+let menu = fs.readFileSync('./mp3/WhatsApp-Ptt-2021-07-14-at-18.12.33.opus') 
 
-conn.sendFile(m.chat, hallo, '', '', m, true)
+conn.sendFile(m.chat, menu, '', '', m, true)
 
 //conn.sendMessage(m.chat, halojarot, MessageType.audio, {quoted: m, mimetype: 'audio/mp4', ptt:true})
 
@@ -16,7 +16,7 @@ conn.sendFile(m.chat, hallo, '', '', m, true)
 
 
 
-handler.customPrefix = /^(hi|hii|hiii|hi bot|tes|tes|hy|halo|hallo|helo|hello|hy aine|halo aine|hallo aine|helo aine|hello aine)$/i
+handler.customPrefix = /^(hi|.menu|hiii|hi bot|tes|tes|hy|halo|hallo|helo|hello|hy aine|halo aine|hallo aine|helo aine|hello aine)$/i
 
 handler.command = new RegExp
 
